@@ -7,6 +7,18 @@ locals {
   }
 }
 
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
 # ------------------------------------------
 # RESOURCE GROUP
 # ------------------------------------------
@@ -16,4 +28,3 @@ resource "azurerm_resource_group" "main" {
   location = local.location
   tags     = local.tags
 }
-
